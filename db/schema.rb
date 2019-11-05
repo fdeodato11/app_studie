@@ -10,7 +10,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_05_000710) do
+ActiveRecord::Schema.define(version: 2019_11_05_052702) do
+
+  create_table "arquivo_licensas", force: :cascade do |t|
+    t.integer "arquivo_id"
+    t.integer "licensa_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["arquivo_id"], name: "index_arquivo_licensas_on_arquivo_id"
+    t.index ["licensa_id"], name: "index_arquivo_licensas_on_licensa_id"
+  end
+
+  create_table "arquivos", force: :cascade do |t|
+    t.string "nome"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "licensas", force: :cascade do |t|
+    t.string "nome"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "user_arquivos", force: :cascade do |t|
+    t.integer "arquivo_id"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["arquivo_id"], name: "index_user_arquivos_on_arquivo_id"
+    t.index ["user_id"], name: "index_user_arquivos_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email"
