@@ -12,6 +12,11 @@
   <% end %>
 
   <div class="field">
+    <%= form.label :nome %>
+    <%= form.text_field :nome %>
+  </div>
+
+  <div class="field">
     <%= form.label :email %>
     <%= form.text_field :email %>
   </div>
@@ -24,6 +29,16 @@
   <div class="field">
     <%= form.label :password_confirmation %>
     <%= form.password_field :password_confirmation %>
+  </div>
+
+  <div class="field">
+    <%= form.label :telefone %>
+    <%= form.text_field :telefone %>
+  </div>
+
+  <div class="field">
+    <%= form.label :instituicao %>
+    <%= form.text_field :instituicao %>
   </div>
 
   <div class="actions">

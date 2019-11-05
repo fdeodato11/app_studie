@@ -14,6 +14,9 @@
     <li class="nav-item">
       <a class="nav-link disabled" href="#">Disabled</a>
     </li>
+    <li class="nav-item active">
+    <%= link_to "Log Out", logout_path %></a>
+    </li>
   </ul>
 </nav>
 
@@ -25,5 +28,9 @@
   <%= link_to "Log In", login_path %>
 <% end %>
 <p id="notice"><%= notice %></p>
-<h1>Example</h1>
-<p>Lorem ipsum …</p>
+<h1>Bem vindo <%= current_user.nome %></h1>
+<p>Voce teve um total de x alteracoes em seus arquivos.</p>
+<p> Clique na aba superio em Meus Arquivos</p>
+<p>para ver seus arquivos e identificar quais</p>
+<p>sofreram mudanças, ou caso já saiba</p>
+<p>arquivos e va direto ao arquivo</p>
