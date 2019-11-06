@@ -51,11 +51,10 @@ class ArquivosController < ApplicationController
   private 
 
   def set_arquivo
-    #@arquivo = Arquivo.find(params[:id]) 
+    @arquivo = Arquivo.find(params[:id])
   end
 
   def arquivo_params
     params.require(:arquivo).permit(:nome)
   end
-
 end

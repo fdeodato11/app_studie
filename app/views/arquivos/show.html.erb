@@ -56,9 +56,11 @@
       <th scope="col">ID</th>
       <th scope="col">Nome</th>
   </tr>
-  <tr>
-  <center><%= link_to "Cadastrar novo Arquivo", arquivos_new_url %></center>
-  </tr>
+
+  <div class="active-cyan-3 active-cyan-4 mb-4">
+    <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+  </div>
+
   <% @arquivos.each do |arquivo| -%>
 
   </thead>
@@ -66,7 +68,7 @@
     <tr>
       <th scope="row"><%=arquivo.id%></th>
       <td><%= arquivo.nome %></td>
-      <td><%= link_to 'Edit', edit_arquivo_path(arquivo) %></td>
+      <td><%= link_to 'Vizualizar', edit_arquivo_path(arquivo) %></td>
     </tr>
     
   </tbody>

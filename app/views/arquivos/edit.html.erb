@@ -1,3 +1,53 @@
-<h1>Editing Arquivo</h1>
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <ul class="navbar-nav">
+    <li class="nav-item active">
+      <a class="nav-link">
+      <%= link_to 'Home', root_url %>
+      </a>
+    </li>
+    <li class="nav-item ">
+      <a class="nav-link">
+      |
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link">
+      <%= link_to 'Meus Arquivos', arquivos_url %>
+      </a>
+    </li>
+    <li class="nav-item ">
+      <a class="nav-link">
+        |
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link">
+        <%= link_to 'Todos os Arquivos', arquivo_url(current_user.id) %>
+      </a>
+    </li>
+    <li class="nav-item ">
+      <a class="nav-link">
+        |
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link">
+        <%= link_to 'Editar Usuario', edit_user_path(current_user) %>
+      </a>
+    </li>
+    <li class="nav-item ">
+      <a class="nav-link">
+        |
+      </a>
+    </li>
+    <li class="nav-item ">
+      <a class="nav-link">
+      <%= link_to "Log Out", logout_path %>
+      </a>
+    </li>
+  </ul>
+</nav>
+
+<h1>Editar Arquivo</h1>
 
 <%= render 'form', arquivo: @arquivo %>
