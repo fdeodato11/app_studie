@@ -24,18 +24,5 @@
   </ul>
 </nav>
 
-
-<% if current_user %>
-  Logged in as <%= current_user.email %>.
-  <%= link_to "Log Out", logout_path %>
-<% else %>
-  <%= link_to "Sign Up", signup_path %> or 
-  <%= link_to "Log In", login_path %>
-<% end %>
-<p id="notice"><%= notice %></p>
-<h1>Bem vindo <%= current_user.nome %></h1>
-<p>Voce teve um total de x alteracoes em seus arquivos.</p>
-<p> Clique na aba superio em Meus Arquivos</p>
-<p>para ver seus arquivos e identificar quais</p>
-<p>sofreram mudanças, ou caso já saiba</p>
-<p>arquivos e va direto ao arquivo</p>
+<h1>Arquivos#new</h1>
+<p>Find me in app/views/arquivos/new.html.erb</p>

@@ -24,18 +24,24 @@
   </ul>
 </nav>
 
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nome</th>
+  </tr>
+  <tr>
+  <center><%= link_to "Cadastrar novo Arquivo", arquivos_new_url %></center>
+  </tr>
+  <% @arquivos.each do |arquivo| -%>
 
-<% if current_user %>
-  Logged in as <%= current_user.email %>.
-  <%= link_to "Log Out", logout_path %>
-<% else %>
-  <%= link_to "Sign Up", signup_path %> or 
-  <%= link_to "Log In", login_path %>
-<% end %>
-<p id="notice"><%= notice %></p>
-<h1>Bem vindo <%= current_user.nome %></h1>
-<p>Voce teve um total de x alteracoes em seus arquivos.</p>
-<p> Clique na aba superio em Meus Arquivos</p>
-<p>para ver seus arquivos e identificar quais</p>
-<p>sofreram mudanças, ou caso já saiba</p>
-<p>arquivos e va direto ao arquivo</p>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td><%= arquivo.nome %></td>
+    </tr>
+    
+  </tbody>
+  <% end -%>
+</table>

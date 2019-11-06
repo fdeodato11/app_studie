@@ -1,6 +1,17 @@
 Rails.application.routes.draw do
+  get 'arquivos/new'
+  get 'arquivos/create'
+  get 'arquivos/edit'
+  get 'arquivos/show'
+  get 'arquivos/index'
+  get 'arquivos/index'
+  get 'arquivos/new'
+  get 'arquivos/create'
+  get 'arquivos/edit'
+  get 'arquivos/show'
   root 'home#index'
   
+  resources :arquivos
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
   get 'signup', to: 'users#new', as: 'signup'
