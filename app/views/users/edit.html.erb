@@ -1,6 +1,46 @@
-<h1>Editing User</h1>
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <ul class="navbar-nav">
+    <li class="nav-item active">
+      <a class="nav-link">
+      <%= link_to 'Home', root_url %>
+      </a>
+    </li>
+    <li class="nav-item ">
+      <a class="nav-link">
+      |
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link">
+      <%= link_to 'Arquivos', arquivos_url %>
+      </a>
+    </li>
+    <li class="nav-item ">
+      <a class="nav-link">
+        |
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link">
+      <%= link_to 'Edit', edit_user_path(current_user) %>
+      </a>
+    </li>
+    <li class="nav-item ">
+      <a class="nav-link">
+        |
+      </a>
+    </li>
+    <li class="nav-item ">
+      <a class="nav-link">
+      <%= link_to "Log Out", logout_path %>
+      </a>
+    </li>
+  </ul>
+</nav>
+
+
+<h1>Editar User</h1>
 
 <%= render 'form', user: @user %>
 
-<%= link_to 'Show', @user %> |
-<%= link_to 'Back', users_path %>
+<%= link_to 'Back', root_url %>

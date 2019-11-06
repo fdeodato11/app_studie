@@ -5,16 +5,30 @@
       <%= link_to 'Home', root_url %>
       </a>
     </li>
+    <li class="nav-item ">
+      <a class="nav-link">
+      |
+      </a>
+    </li>
     <li class="nav-item">
       <a class="nav-link">
       <%= link_to 'Arquivos', arquivos_url %>
       </a>
     </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Link</a>
+    <li class="nav-item ">
+      <a class="nav-link">
+        |
+      </a>
     </li>
     <li class="nav-item">
-      <a class="nav-link disabled" href="#">Disabled</a>
+      <a class="nav-link">
+      <%= link_to 'Edit', edit_user_path(current_user) %>
+      </a>
+    </li>
+    <li class="nav-item ">
+      <a class="nav-link">
+        |
+      </a>
     </li>
     <li class="nav-item ">
       <a class="nav-link">
@@ -23,6 +37,7 @@
     </li>
   </ul>
 </nav>
+
 
 <%= render 'form', arquivo: @arquivo %>
 

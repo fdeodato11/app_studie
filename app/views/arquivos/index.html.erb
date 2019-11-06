@@ -5,16 +5,30 @@
       <%= link_to 'Home', root_url %>
       </a>
     </li>
+    <li class="nav-item ">
+      <a class="nav-link">
+      |
+      </a>
+    </li>
     <li class="nav-item">
       <a class="nav-link">
       <%= link_to 'Arquivos', arquivos_url %>
       </a>
     </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Link</a>
+    <li class="nav-item ">
+      <a class="nav-link">
+        |
+      </a>
     </li>
     <li class="nav-item">
-      <a class="nav-link disabled" href="#">Disabled</a>
+      <a class="nav-link">
+      <%= link_to 'Edit', edit_user_path(current_user) %>
+      </a>
+    </li>
+    <li class="nav-item ">
+      <a class="nav-link">
+        |
+      </a>
     </li>
     <li class="nav-item ">
       <a class="nav-link">
@@ -24,22 +38,24 @@
   </ul>
 </nav>
 
+
 <table class="table">
   <thead>
     <tr>
-      <th scope="col">#</th>
+      <th scope="col">ID</th>
       <th scope="col">Nome</th>
   </tr>
   <tr>
   <center><%= link_to "Cadastrar novo Arquivo", arquivos_new_url %></center>
   </tr>
-  <% @arquivos.each do |arquivo| -%>
+  <% current_user.arquivos.each do |arquivo| -%>
 
   </thead>
   <tbody>
     <tr>
-      <th scope="row">1</th>
+      <th scope="row"><%=arquivo.id%></th>
       <td><%= arquivo.nome %></td>
+      <td><%= link_to 'Edit', edit_arquivo_path(arquivo) %></td>
     </tr>
     
   </tbody>
