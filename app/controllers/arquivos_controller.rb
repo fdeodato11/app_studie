@@ -55,6 +55,6 @@ class ArquivosController < ApplicationController
   end
 
   def arquivo_params
-    params.require(:arquivo).permit(:nome)
+    params.require(:arquivo).permit(:nome, :ano, :titulo, :autor)
   end
 end

@@ -55,6 +55,10 @@
     <tr>
       <th scope="col">ID</th>
       <th scope="col">Nome</th>
+      <th scope="col">Titulo</th>
+      <th scope="col">Autor</th>
+      <th scope="col">Ano</th>
+      <th scope="col">Licensa</th>
   </tr>
   <tr>
   <center><%= link_to "Cadastrar novo Arquivo", arquivos_new_url %></center>
@@ -65,7 +69,11 @@
   <tbody>
     <tr>
       <th scope="row"><%=arquivo.id%></th>
-      <td><%= arquivo.nome %></td>
+      <th scope="row"><%=arquivo.nome%></th>
+      <td><%= arquivo.titulo %></td>
+      <td><%= arquivo.autor %></td>
+      <td><%= arquivo.ano %></td>
+      <td><%= arquivo.licensas.last.nome if arquivo.licensas.present? %></td>
       <td><%= link_to 'Edit', edit_arquivo_path(arquivo) %></td>
     </tr>
     
