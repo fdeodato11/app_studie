@@ -12,7 +12,7 @@
     </li>
     <li class="nav-item">
       <a class="nav-link">
-      <%= link_to 'Arquivos', arquivos_url %>
+      <%= link_to 'Meus Arquivos', arquivos_url %>
       </a>
     </li>
     <li class="nav-item ">
@@ -22,7 +22,17 @@
     </li>
     <li class="nav-item">
       <a class="nav-link">
-      <%= link_to 'Edit', edit_user_path(current_user) %>
+        <%= link_to 'Todos os Arquivos', arquivo_url(current_user.id) %>
+      </a>
+    </li>
+    <li class="nav-item ">
+      <a class="nav-link">
+        |
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link">
+        <%= link_to 'Editar Usuario', edit_user_path(current_user) %>
       </a>
     </li>
     <li class="nav-item ">
@@ -39,13 +49,6 @@
 </nav>
 
 
-<% if current_user %>
-  Logged in as <%= current_user.email %>.
-  <%= link_to "Log Out", logout_path %>
-<% else %>
-  <%= link_to "Sign Up", signup_path %> or 
-  <%= link_to "Log In", login_path %>
-<% end %>
 <p id="notice"><%= notice %></p>
 <h1>Bem vindo <%= current_user.nome %></h1>
 <p>Voce teve um total de x alteracoes em seus arquivos.</p>

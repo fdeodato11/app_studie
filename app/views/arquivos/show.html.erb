@@ -1,2 +1,74 @@
-<h1>Arquivos#show</h1>
-<p>Find me in app/views/arquivos/show.html.erb</p>
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <ul class="navbar-nav">
+    <li class="nav-item active">
+      <a class="nav-link">
+      <%= link_to 'Home', root_url %>
+      </a>
+    </li>
+    <li class="nav-item ">
+      <a class="nav-link">
+      |
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link">
+      <%= link_to 'Meus Arquivos', arquivos_url %>
+      </a>
+    </li>
+    <li class="nav-item ">
+      <a class="nav-link">
+        |
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link">
+        <%= link_to 'Todos os Arquivos', arquivo_url(current_user.id) %>
+      </a>
+    </li>
+    <li class="nav-item ">
+      <a class="nav-link">
+        |
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link">
+        <%= link_to 'Editar Usuario', edit_user_path(current_user) %>
+      </a>
+    </li>
+    <li class="nav-item ">
+      <a class="nav-link">
+        |
+      </a>
+    </li>
+    <li class="nav-item ">
+      <a class="nav-link">
+      <%= link_to "Log Out", logout_path %>
+      </a>
+    </li>
+  </ul>
+</nav>
+
+
+<center><h1>Todos os Arquivos</h1><center>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Nome</th>
+  </tr>
+  <tr>
+  <center><%= link_to "Cadastrar novo Arquivo", arquivos_new_url %></center>
+  </tr>
+  <% @arquivos.each do |arquivo| -%>
+
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row"><%=arquivo.id%></th>
+      <td><%= arquivo.nome %></td>
+      <td><%= link_to 'Edit', edit_arquivo_path(arquivo) %></td>
+    </tr>
+    
+  </tbody>
+  <% end -%>
+</table>

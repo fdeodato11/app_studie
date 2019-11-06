@@ -45,12 +45,13 @@ class ArquivosController < ApplicationController
   end
 
   def show
+    @arquivos = Arquivo.all
   end
 
   private 
 
   def set_arquivo
-    @arquivo = Arquivo.find(params[:id])
+    #@arquivo = Arquivo.find(params[:id]) 
   end
 
   def arquivo_params

@@ -12,7 +12,7 @@
     </li>
     <li class="nav-item">
       <a class="nav-link">
-      <%= link_to 'Arquivos', arquivos_url %>
+      <%= link_to 'Meus Arquivos', arquivos_url %>
       </a>
     </li>
     <li class="nav-item ">
@@ -22,7 +22,17 @@
     </li>
     <li class="nav-item">
       <a class="nav-link">
-      <%= link_to 'Edit', edit_user_path(current_user) %>
+        <%= link_to 'Todos os Arquivos', arquivo_url(current_user.id) %>
+      </a>
+    </li>
+    <li class="nav-item ">
+      <a class="nav-link">
+        |
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link">
+        <%= link_to 'Editar Usuario', edit_user_path(current_user) %>
       </a>
     </li>
     <li class="nav-item ">
@@ -39,6 +49,7 @@
 </nav>
 
 
+
 <table class="table">
   <thead>
     <tr>
@@ -48,7 +59,7 @@
   <tr>
   <center><%= link_to "Cadastrar novo Arquivo", arquivos_new_url %></center>
   </tr>
-  <% current_user.arquivos.each do |arquivo| -%>
+  <% @arquivos.each do |arquivo| -%>
 
   </thead>
   <tbody>
